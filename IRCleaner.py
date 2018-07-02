@@ -9,6 +9,10 @@
 
 import math
 
+arduino = True
+# if arduino is true, this will format it for use with an arduino, starting with unsigned int cleanedIR[] = { and ending with a closed curly brace and a semicolon
+# make sure that your True or False starts with a capital letter!
+
 def roundUp(x):
   return int(math.ceil(x / 100.0)) * 100
 
@@ -23,9 +27,10 @@ def round(x):
     return roundUp(x)
 
 def listToString(list):
-  return string = ''.join(str(e) for e in list)
+   string = ','.join(str(e) for e in list)
+   return string
 
-toClean = input('What is the IR string to clean? Paste it in, comma seperated.')
+toClean = input('What is the IR string to clean? Paste it in, comma seperated.\n')
 toClean = toClean.split(',')
 #print(toClean)
 
@@ -33,4 +38,8 @@ cleaned = []
 for i in range(0, len(toClean)):
   cleaned.append(round(int(toClean[i])))
 
-print(cleaned);
+if arduino == True:
+  print('')
+  print('\n\n\nunsigned int cleanedIR[] = {' + listToString(cleaned) + '}; // cleaned ir signal by https://github.com/iamtheyammer/ir-cleaner\n\n\n')
+else:
+  print(cleaned)
