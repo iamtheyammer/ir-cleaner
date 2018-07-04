@@ -11,8 +11,8 @@ Every time I plan on using raw IR codes, I will definitely clean them and I recc
 2. Open the script in a text editor and set the output variable as follows:
   - 0) Unformatted list (array). Example: [34534700, 64600, 100, 400, 100, 0, 0, 547200]
   - 1) Arduino: this will format it for use with an arduino, starting with unsigned int cleanedIR[] = { and ending with a closed curly brace and a semicolon. Example: unsigned int cleanedIR[] = {100,5600,0,346500,0,0,100,700,563500,57500};
-  - 2) LIRC (linux infrared remote control): For use with LIRC on any linux machine, like a raspberry pi. Assumes that a number like -1242 is a space and that a number like 1242 is a pulse. (if you don't know what that last sentence means, don't worry about it!)
-3. Run the script, in pretty much any python compiler. (Open, then F5 in IDLE, or on a mac `python3 ./IRCleaner.py`)
+  - 2) LIRC (linux infrared remote control): For use with LIRC on any linux machine, like a raspberry pi. 
+3. Run the script, in pretty much any python compiler. (Open, then F5 in IDLE, or on a mac `python3 ./IRCleaner.py`. Mac terminal doesn't accept strings over a certain length so if your output is smaller than your input I'd reccommend you try IDLE.)
 4. Enjoy your cleaned code!
 
 ## Issues or questions?
