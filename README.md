@@ -9,9 +9,9 @@ Every time I plan on using raw IR codes, I will definitely clean them and I recc
 0. Capture a raw IR code. For most devices, I'd try [this](https://github.com/z3t0/Arduino-IRremote/blob/master/examples/IRrecvDumpV2/IRrecvDumpV2.ino) script, from the [IRLib/Arduino-IRremote library](https://github.com/z3t0/Arduino-IRremote), and using the hex code (starts with `0x`) from it (effectively skipping the use of this tool). The hex codes don't always work, and if they don't I'd reccomend you try the following air conditioner instructions. If you're trying to control an air conditoner or something odd, use [this](https://www.analysir.com/blog/wp-content/uploads/2014/03/Arduino_Record_Long_AirConditioner_Infrared_Signals_10.txt) script on an arduino (seems to only work on an Uno), and that's where this tool really comes in handy. If you're using the script in the previous sentence, and you've got some data, let's clean it!
 1. Download the script. There's a little clone/download button on the homepage for this repository, so click that and download ZIP.
 2. Open the script in a text editor and set the output variable as follows:
-  - 0) Unformatted list (array). Example: [34534700, 64600, 100, 400, 100, 0, 0, 547200]
-  - 1) Arduino: this will format it for use with an arduino, starting with unsigned int cleanedIR[] = { and ending with a closed curly brace and a semicolon. Example: unsigned int cleanedIR[] = {100,5600,0,346500,0,0,100,700,563500,57500};
-  - 2) LIRC (linux infrared remote control): For use with LIRC on any linux machine, like a raspberry pi. 
+  - `0)` Unformatted list (array). Example: [34534700, 64600, 100, 400, 100, 0, 0, 547200]
+  - `1)` Arduino: this will format it for use with an arduino, starting with unsigned int cleanedIR[] = { and ending with a closed curly brace and a semicolon. Example: unsigned int cleanedIR[] = {100,5600,0,346500,0,0,100,700,563500,57500};
+  - `2)` LIRC (linux infrared remote control): For use with LIRC on any linux machine, like a raspberry pi. [Example](https://gist.github.com/iamtheyammer/06a69823ba4b76228866972d181c44a3)
 3. Run the script, in pretty much any python compiler. (Open, then F5 in IDLE, or on a mac `python3 ./IRCleaner.py`. Mac terminal doesn't accept strings over a certain length so if your output is smaller than your input I'd reccommend you try IDLE.)
 4. Enjoy your cleaned code!
 
